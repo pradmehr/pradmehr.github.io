@@ -85,7 +85,7 @@ analytics:
 # Site Author
 author:
   name             : "Payam Radmehr"
-  avatar           : "/images/bio-pic-2.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/Pic1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "My DS/ML Portfolio"
   location         : "Richardson, TX"
   email            :
