@@ -1,5 +1,5 @@
 ---
-title: "UNICEF Project - Part 1 (Data Preparation)"
+title: "UNICEF Project - (Data Preparation)"
 date: 2020-05-18
 permalink: /Projects/
 tags: [UNICEF, SOWC, Data Science, xlrd]
