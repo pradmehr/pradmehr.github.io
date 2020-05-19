@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/bg1.jpg"
+  image: /images/bg1.jpg
 ---
 
 I'm a data enthusiastic who enjoy coding and try to excel at data wrangling, machine learning, exploratory analysis, and data visualizations. I like working with R and SAS, but I Love Python!

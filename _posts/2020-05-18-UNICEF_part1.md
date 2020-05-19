@@ -5,7 +5,7 @@ date: 2020-05-18
 permalink: /Projects/
 tags: [UNICEF, SOWC, Data Science, xlrd]
 header:
-  image: "/images/Project/unicef1.jpg"
+  image: /images/Project/unicef1.jpg
 excerpt: "UNICEF, SOWC, Data Science, xlrd"
 mathjax: "true"
 ---
