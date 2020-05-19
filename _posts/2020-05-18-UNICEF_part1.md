@@ -1,4 +1,5 @@
 ---
+layout: "posts"
 title: "UNICEF Project - (Data Preparation)"
 date: 2020-05-18
 permalink: /Projects/
