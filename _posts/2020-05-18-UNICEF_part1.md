@@ -1,7 +1,7 @@
 ---
 title: "UNICEF Project - Part 1 (Data Preparation)"
 date: 2020-05-18
-permalink: /Projects/UNICEF-1
+permalink: /Projects/
 tags: [UNICEF, SOWC, Data Science, xlrd]
 header:
   image: "/images/Project/unicef.jpg"
