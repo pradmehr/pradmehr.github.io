@@ -1,7 +1,7 @@
 ---
 #layout: posts
-permalink: /Projects/
 title: "Projects"
+permalink: /Projects/
 header:
   image: "/images/fort point.png"
 ---
