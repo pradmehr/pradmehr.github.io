@@ -1,7 +1,8 @@
 ---
-layout: pages
 title: "Projects"
 permalink: /Projects/
+layout: category
+taxonomy: project
 header:
   overlay_image: /images/Project/project.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background

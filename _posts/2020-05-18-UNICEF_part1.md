@@ -3,6 +3,7 @@ layout: "posts"
 title: "Key Indicators of World’s Children"
 date: 2020-05-18
 permalink: /Projects/unicef-1
+categories: [project]
 tags: [UNICEF, SOWC, Data Science, xlrd]
 header:
   image: /images/Project/unicef1.jpg
