@@ -1,4 +1,5 @@
 ---
+layout: "posts"
 title: "Generating Poetry by using LSTM-RNN"
 subtitle: "Project Report - First Revision"
 date: 2020-05-20
@@ -6,6 +7,7 @@ date: 2020-05-20
 citation_package: natbib
 bibliography: ref
 link-citations: no
+permalink: /Projects/
 
 tags: [poems, poetry generation, LSTM, RNN, data science, text analysis]
 header:
@@ -17,7 +19,7 @@ mathjax: "true"
 
 # Introduction
 \begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-1-1} \end{marginfigure}
+\includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-1-1} \end{marginfigure}
 
 In this present report, I investigate poems generation by using Recurrent Neural Network (RNN). Since a poem is a collection of words in a sequence, I decide to deploy Long Short-Term Memory (LSTM) as it can capture this sequence of words. Each cell of LSTM can process data in a sequence way and use its hidden layers as a new input. After this short introduction, I explain the chosen dataset. Then, I do some preprocessing tasks to make the dataset prepared for neural network analysis. By conducting Explanatory Data Analysis (EDA), we will get more insight from the dataset. We will take a look at word frequency, word cloud, and n-gram. In the model section, we discuss LSTM and the results.
 
@@ -56,7 +58,7 @@ It could contain abbreviations form of words, e.g. `won't` instead of `will not`
 # EDA
 ## *Word frequency table*
 \begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-4-1} \caption[Top 6 most frequent words in the poetry dataset]{Top 6 most frequent words in the poetry dataset}\label{fig:unnamed-chunk-4}
+\includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-4-1} \caption[Top 6 most frequent words in the poetry dataset]{Top 6 most frequent words in the poetry dataset}\label{fig:unnamed-chunk-4}
 \end{marginfigure}
 
 The first step we can take in Explanatory Data Analysis (EDA) is to display the word frequency. It can be useful to find out the high-frequent words used in poetry. It should not be surprising if we see some romantic and sweet words. After tokenizing the content of the poem into words, we can remove the words called **stop words** such as `and`, `that`, etc.
@@ -64,7 +66,7 @@ The first step we can take in Explanatory Data Analysis (EDA) is to display the 
 Since there are some classic poems in this dataset, we expect to observe many archaic pronouns (e.g. thee, thou, and thy). It can affect the relative frequency of other words. In order to correct this issue, these words are filtered from this EDA step. As we expected, the most frequent words are sweet and romantics such as `Love`, `Heart`, `sweet`, ... If we divide corresponding values by the total number of poems in the dataset (506), there would be at least one word `Love` in each poem (on average).
 
 \begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-5-1} \caption[Word Cloud (for those whose frequency is higher than 10)]{Word Cloud (for those whose frequency is higher than 10)}\label{fig:unnamed-chunk-5}
+\includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-5-1} \caption[Word Cloud (for those whose frequency is higher than 10)]{Word Cloud (for those whose frequency is higher than 10)}\label{fig:unnamed-chunk-5}
 \end{marginfigure}
 
 ## *Word Cloud*
@@ -74,11 +76,11 @@ Word cloud is another way of displaying word frequency in a more fancy and schem
 Figure 2 gives a big picture of the whole dataset, but how if we depict word cloud separately for renaissance and modern poetry. According to figures 3 and 4, they are two different clouds both in color and word variety - as we expected. It seems that in modern poetry, poets use a diverse list of words, while in renaissance poets used words repeatedly. And not surprisingly, **Love** has been the most frequent word in all periods. It seems it is an unsolved problem of humanity! Or at least an attractive topic for poets of all time.
 
 \begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-6-1} \caption[Word Cloud of Renaissance poetry (for those whose frequency is higher than 10)]{Word Cloud of Renaissance poetry (for those whose frequency is higher than 10)}\label{fig:unnamed-chunk-6}
+\includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-6-1} \caption[Word Cloud of Renaissance poetry (for those whose frequency is higher than 10)]{Word Cloud of Renaissance poetry (for those whose frequency is higher than 10)}\label{fig:unnamed-chunk-6}
 \end{marginfigure}
 
 \begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-7-1} \caption[Word Cloud of Modern poetry (for those whose frequency is higher than 10)]{Word Cloud of Modern poetry (for those whose frequency is higher than 10)}\label{fig:unnamed-chunk-7}
+\includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-7-1} \caption[Word Cloud of Modern poetry (for those whose frequency is higher than 10)]{Word Cloud of Modern poetry (for those whose frequency is higher than 10)}\label{fig:unnamed-chunk-7}
 \end{marginfigure}
 
 ## *Bigram List*
@@ -109,7 +111,7 @@ wilt     thou      16
 Another common visualization tool is to convert the bigram into a network. By doing this, we understand better how words are connected. Bigram network is depicted in figure 5. This network is a graphical format of the Markov chain, a simple and common method of text predicting. It works by calculating the probability and finding the most probable word. In the Markov chain, predicting the next word depends only on the previous word. Since we are going to deploy LSTM-RNN, it does not need to delve more into bigram network visualization.
 
 \begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-9-1} \caption[Bigram Network]{Bigram Network}\label{fig:unnamed-chunk-9}
+\includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-9-1} \caption[Bigram Network]{Bigram Network}\label{fig:unnamed-chunk-9}
 \end{marginfigure}
 
 # Model
@@ -119,14 +121,14 @@ Another common visualization tool is to convert the bigram into a network. By do
 Traditional neural networks cannot keep information. They are not good at predicting events which are dependent on the previous event. Recurrent neural networks (RNN) can address this problem by deploying loops in itself. This loop acts like a memory to persist information.
 
 \begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-10-1} \caption[An unrolled simple RNN]{An unrolled simple RNN}\label{fig:unnamed-chunk-10}
+\includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-10-1} \caption[An unrolled simple RNN]{An unrolled simple RNN}\label{fig:unnamed-chunk-10}
 \end{marginfigure}
 
 If we unroll this loop, it turns out that they can be considered as a consecutive normal neural networks. RNN is nothing just several serie copies of the same network. Each copy can pass information to its successor. It can be depicted as following figure:
 
 \begin{figure*}
 
-{\centering \includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-11-1}
+{\centering \includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-11-1}
 
 }
 
@@ -155,7 +157,7 @@ Remembering events and maintaining information for long periods is in LSTM's blo
 
 \begin{figure*}
 
-{\centering \includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-13-1}
+{\centering \includegraphics{/_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-13-1}
 
 }
 
