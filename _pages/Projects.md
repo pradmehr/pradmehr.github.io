@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 permalink: /Projects/
-layout: category
+layout: categories
 taxonomy: project
 header:
   overlay_image: /images/Project/project.png
