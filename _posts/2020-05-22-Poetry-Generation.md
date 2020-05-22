@@ -5,8 +5,8 @@ subtitle: "Project Report - First Revision"
 date: 2020-05-20
 #output: tint::tintHtml
 citation_package: natbib
-bibliography: ref
-link-citations: no
+bibliography: ref.bib
+#link-citations: no
 permalink: /Projects/
 
 tags: [poems, poetry generation, LSTM, RNN, data science, text analysis]
@@ -19,7 +19,7 @@ mathjax: "true"
 Introduction
 ============
 
-![](/figure-markdown_github/unnamed-chunk-1-1.png)
+![](/_posts/figure-markdown_github/unnamed-chunk-1-1.png)
 
 In this present post, I am going to investigate poems generation by using Recurrent Neural Network (RNN). Since a poem is a collection of words in a sequence, I decide to deploy Long Short-Term Memory (LSTM) as it can capture this sequence of words. Each cell of LSTM can process data in a sequence way and use its hidden layers as a new input. After this short introduction, I explain the chosen dataset. Then, I do some preprocessing tasks to make the dataset prepared for neural network analysis. By conducting Explanatory Data Analysis (EDA), we will get more insight from the dataset. We will take a look at word frequency, word cloud, and n-gram. In the model section, we discuss LSTM and the results.
 
