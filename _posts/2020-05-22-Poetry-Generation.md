@@ -3,7 +3,7 @@ layout: "posts"
 title: "Generating Poetry by using LSTM-RNN"
 subtitle: "Project Report - First Revision"
 date: 2020-05-22
-permalink: /Projects/PoetryGeneration/
+permalink: /categories/PoetryGeneration/
 categories: [project]
 tags: [poems, poetry generation, LSTM, RNN, data science, text analysis]
 header:
