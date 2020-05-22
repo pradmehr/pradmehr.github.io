@@ -16,32 +16,38 @@ mathjax: "true"
 ---
 
 
+Introduction
+============
 
-# Introduction
-![](figure-markdown_github/unnamed-chunk-1-1.png)
+![](/figure-markdown_github/unnamed-chunk-1-1.png)
 
 In this present post, I am going to investigate poems generation by using Recurrent Neural Network (RNN). Since a poem is a collection of words in a sequence, I decide to deploy Long Short-Term Memory (LSTM) as it can capture this sequence of words. Each cell of LSTM can process data in a sequence way and use its hidden layers as a new input. After this short introduction, I explain the chosen dataset. Then, I do some preprocessing tasks to make the dataset prepared for neural network analysis. By conducting Explanatory Data Analysis (EDA), we will get more insight from the dataset. We will take a look at word frequency, word cloud, and n-gram. In the model section, we discuss LSTM and the results.
 
-# Data
+Data
+====
 
-The dataset Kaggle[^fn1] used in this project is a collection gathered from the Poetry Foundation webpage poetryFoundation[^fn2]. It contains 573 poems from 67 poets, including `WILLIAM SHAKESPEARE` and `SIR PHILIP SIDNEY`. Columns and their description are as follows.
+The dataset[^fn1] used in this project is a collection gathered from the Poetry Foundation webpage poetryFoundation[^fn2] webpage . It contains 573 poems from 67 poets,
+including `WILLIAM SHAKESPEARE` and `SIR PHILIP SIDNEY`. Columns and
+their description are as follows.
 
+| featureNames | Description                                                                      |
+|:-------------|:---------------------------------------------------------------------------------|
+| Author       | Poets’ Name                                                                      |
+| content      | content of Poems                                                                 |
+| poem.name    | Poems’ Name                                                                      |
+| age          | binary value representing whether poems are “Classic” or belong to “Renaissance” |
+| type         | The theme of poems: “Love”, “Nature”, and “Mythology & Folklore”                 |
 
-Table: Dataset description
+For example, the first row contains the William Shakespeare’s[^fn3] poem called
+`The Phoenix and the Turtle`. It starts with:
 
-featureNames   Description                                                                      
--------------  ---------------------------------------------------------------------------------
-Author         Poets' Name                                                                      
-content        content of Poems                                                                 
-poem.name      Poems' Name                                                                      
-age            binary value representing whether poems are "Classic" or belong to "Renaissance"
-type           The theme of poems: "Love", "Nature", and "Mythology & Folklore"                 
-
-For example, the first row contains the William Shakespeare's \cite{Shakespear} poem called `The Phoenix and the Turtle`. It starts with:
-
-> "_Let the bird of loudest lay On the sole Arabian tree Herald sad and trumpet be, To whose sound chaste wings obey._"
+> “*Let the bird of loudest lay On the sole Arabian tree Herald sad and
+> trumpet be, To whose sound chaste wings obey.*”
 >
->{\hfill} --- William Shakespeare
+> <footer>
+> — William Shakespeare
+> </footer>
+
 
 # Preprocessing
 
@@ -208,25 +214,11 @@ In this post, after introducing the dataset and the required preprocessing steps
 
 
 
-[^fn2]: @misc{poetryFoundation,
-title={Poetry Foundation},
-url={https://www.poetryfoundation.org/},
-journal={Poetry Foundation},
-publisher={Poetry Foundation}
-}
+[^fn2]: https://www.poetryfoundation.org/
 
-[^fn1]: @misc{Kaggle, title = {Poems from poetryfoundation.org},
-  url = {https://www.kaggle.com/ultrajack/modern-renaissance-poetry},
-  urldate = {2017-07-08}
-}
+[^fn1]: https://www.kaggle.com/ultrajack/modern-renaissance-poetry
 
-@book{Shakespear,
-place={Pearl Beach},
-title={The phoenix and the turtle},
-publisher={Escutcheon Press},
-author={Shakespeare, William},
-year={1991}
-}
+[^fn3]: The phoenix and the turtle, Escutcheon Press, Shakespeare William, 1991
 
 @misc{LSTM,
 title={Understanding LSTM Networks},
