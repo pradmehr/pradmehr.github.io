@@ -7,7 +7,7 @@ date: 2020-05-20
 citation_package: natbib
 bibliography: ref
 link-citations: no
-permalink: /Projects/poetryGeneration/
+permalink: /Projects/
 
 tags: [poems, poetry generation, LSTM, RNN, data science, text analysis]
 header:
@@ -18,15 +18,13 @@ mathjax: "true"
 
 
 # Introduction
-\begin{marginfigure}
-\includegraphics{2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-1-1} \end{marginfigure}
-<embed src="_posts/2020-05-22-Poetry-Generation/figure-latex/unnamed-chunk-1-1.pdf"></embed>
+![](figure-markdown_github/unnamed-chunk-1-1.png)
 
-In this present report, I investigate poems generation by using Recurrent Neural Network (RNN). Since a poem is a collection of words in a sequence, I decide to deploy Long Short-Term Memory (LSTM) as it can capture this sequence of words. Each cell of LSTM can process data in a sequence way and use its hidden layers as a new input. After this short introduction, I explain the chosen dataset. Then, I do some preprocessing tasks to make the dataset prepared for neural network analysis. By conducting Explanatory Data Analysis (EDA), we will get more insight from the dataset. We will take a look at word frequency, word cloud, and n-gram. In the model section, we discuss LSTM and the results.
+In this present post, I am going to investigate poems generation by using Recurrent Neural Network (RNN). Since a poem is a collection of words in a sequence, I decide to deploy Long Short-Term Memory (LSTM) as it can capture this sequence of words. Each cell of LSTM can process data in a sequence way and use its hidden layers as a new input. After this short introduction, I explain the chosen dataset. Then, I do some preprocessing tasks to make the dataset prepared for neural network analysis. By conducting Explanatory Data Analysis (EDA), we will get more insight from the dataset. We will take a look at word frequency, word cloud, and n-gram. In the model section, we discuss LSTM and the results.
 
 # Data
 
-The dataset \cite{Kaggle} used in this project is a collection gathered from the Poetry Foundation webpage \cite{poetryFoundation}. It contains 573 poems from 67 poets, including `WILLIAM SHAKESPEARE` and `SIR PHILIP SIDNEY`. Columns and their description are as follows.
+The dataset Kaggle[^fn1] used in this project is a collection gathered from the Poetry Foundation webpage poetryFoundation[^fn2]. It contains 573 poems from 67 poets, including `WILLIAM SHAKESPEARE` and `SIR PHILIP SIDNEY`. Columns and their description are as follows.
 
 
 Table: Dataset description
@@ -207,3 +205,60 @@ Just for the sake of curiosity, I imported all Shakespeare's poems from the Gute
 # Conclusion
 
 In this post, after introducing the dataset and the required preprocessing steps, I explained the explanatory data analysis that shows old-world poets had been reluctant to choose various words, comparing to modern poets. We observed that the word `Love` has been used in all periods. By running LSTM for the first time, we noticed that the designed neural network did not perform well. By changing maxlen, epoch, and batch sizes, which control under fitting and over fitting, it can generate more sophisticated (close to human-written) results that are still far away from a well-written poem.
+
+
+
+[^fn2]: @misc{poetryFoundation,
+title={Poetry Foundation},
+url={https://www.poetryfoundation.org/},
+journal={Poetry Foundation},
+publisher={Poetry Foundation}
+}
+
+[^fn1]: @misc{Kaggle, title = {Poems from poetryfoundation.org},
+  url = {https://www.kaggle.com/ultrajack/modern-renaissance-poetry},
+  urldate = {2017-07-08}
+}
+
+@book{Shakespear,
+place={Pearl Beach},
+title={The phoenix and the turtle},
+publisher={Escutcheon Press},
+author={Shakespeare, William},
+year={1991}
+}
+
+@misc{LSTM,
+title={Understanding LSTM Networks},
+url={http://colah.github.io/posts/2015-08-Understanding-LSTMs/},
+journal={Understanding LSTM Networks -- colah's blog}
+}
+
+@article{article1,
+title={LONG SHORT-TERM MEMORY},
+journal={Neural Computation},
+author={Hochreiter, Sepp and Schmidhuber, Jurgen},
+year={1997},
+pages={1738–1780}
+}
+
+@misc{wikipedia,
+title={Bigram},
+url={https://en.wikipedia.org/wiki/Bigram},
+journal={Wikipedia},
+publisher={Wikimedia Foundation},
+year={2020},
+month={Apr}
+}
+
+@misc{gproj,
+title={Project Gutenberg},
+url={https://www.gutenberg.org/},
+journal={Project Gutenberg}
+}
+
+@misc{robinson,
+title={Download and Process Public Domain Works from Project Gutenberg [R package gutenbergr version 0.1.5]},
+url={https://cran.r-project.org/web/packages/gutenbergr/index.html},
+journal={The Comprehensive R Archive Network}, publisher={Comprehensive R Archive Network (CRAN)},
+author={Robinson, David}}
