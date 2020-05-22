@@ -2,16 +2,12 @@
 layout: "posts"
 title: "Generating Poetry by using LSTM-RNN"
 subtitle: "Project Report - First Revision"
-date: 2020-05-20
-#output: tint::tintHtml
-citation_package: natbib
-bibliography: ref.bib
-#link-citations: no
+date: 2020-05-22
 permalink: /Projects/
 
 tags: [poems, poetry generation, LSTM, RNN, data science, text analysis]
 header:
-  image: "/images/Project/Shakespeare.jpg"
+  image: /images/Project/Shakespeare.jpg
 mathjax: "true"
 ---
 
@@ -19,7 +15,7 @@ mathjax: "true"
 Introduction
 ============
 
-![](/_posts/figure-markdown_github/unnamed-chunk-1-1.png)
+![alt]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-1-1.png)
 
 In this present post, I am going to investigate poems generation by using Recurrent Neural Network (RNN). Since a poem is a collection of words in a sequence, I decide to deploy Long Short-Term Memory (LSTM) as it can capture this sequence of words. Each cell of LSTM can process data in a sequence way and use its hidden layers as a new input. After this short introduction, I explain the chosen dataset. Then, I do some preprocessing tasks to make the dataset prepared for neural network analysis. By conducting Explanatory Data Analysis (EDA), we will get more insight from the dataset. We will take a look at word frequency, word cloud, and n-gram. In the model section, we discuss LSTM and the results.
 
@@ -71,8 +67,7 @@ EDA
 *Word frequency table*
 ----------------------
 
-![Top 6 most frequent words in the poetry
-dataset](post_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![Top 6 most frequent words in the poetry dataset]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-4-1.png)
 
 The first step we can take in Explanatory Data Analysis (EDA) is to
 display the word frequency. It can be useful to find out the
@@ -90,8 +85,7 @@ divide corresponding values by the total number of poems in the dataset
 (506), there would be at least one word `Love` in each poem (on
 average).
 
-![Word Cloud (for those whose frequency is higher than
-10)](post_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![Word Cloud (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-5-1.png)
 
 *Word Cloud*
 ------------
@@ -113,16 +107,14 @@ And not surprisingly, **Love** has been the most frequent word in all
 periods. It seems it is an unsolved problem of humanity! Or at least an
 attractive topic for poets of all time.
 
-![Word Cloud of Renaissance poetry (for those whose frequency is higher
-than 10)](post_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![Word Cloud of Renaissance poetry (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-6-1.png)
 
-![Word Cloud of Modern poetry (for those whose frequency is higher than
-10)](post_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![Word Cloud of Modern poetry (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-7-1.png)
 
 *Bigram List*
 -------------
 
-The next tool is bigram or in simple language: *the analysis of a pair
+The next tool is bigram[^fn4] or in simple language: *the analysis of a pair
 of consecutive words*. Not only it can give us a holistic view of highly
 consecutive words, but it also allows us to monitor how our
 preprocessing works. This dataset is collected by web scrapping and it
@@ -165,8 +157,7 @@ probable word. In the Markov chain, predicting the next word depends
 only on the previous word. Since we are going to deploy LSTM-RNN, it
 does not need to delve more into bigram network visualization.
 
-![Bigram
-Network](post_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![Bigram Network]({{ site.url }}{{ site.baseurl }}_post/figure-markdown_github/unnamed-chunk-9-1.png)/
 
 Model
 =====
@@ -175,22 +166,18 @@ Model
 -----
 
 Traditional neural networks cannot keep information. They are not good
-at predicting events which are dependant on the previous event.
+at predicting events which are dependent on the previous event.
 Recurrent neural networks (RNN) can address this problem by deploying
 loops in itself. This loop acts like a memory to persist information.
 
-![An unrolled simple
-RNN](post_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![An unrolled simple RNN]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-10-1.png)
 
 If we unroll this loop, it turns out that they can be considered as a
 consecutive normal neural networks. RNN is nothing just several serie
 copies of the same network. Each copy can pass information to its
 successor. It can be depicted as following figure:
 
-<img src="post_files/figure-markdown_github/unnamed-chunk-11-1.png" alt="Unrolled RNN - a consecutively repeated NN"  />
-<p class="caption">
-Unrolled RNN - a consecutively repeated NN
-</p>
+![Unrolled RNN - a consecutively repeated NN]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-11-1.png)
 
 *LSTM*
 ------
@@ -198,9 +185,9 @@ Unrolled RNN - a consecutively repeated NN
 RNN has the great ability to address problems in speech recognition,
 image captioning, translation, etc. While RNN performs well from the
 previous event, it fails to predict when there is a big gap between
-events. Long Short Term Memory (LSTM) networks - a specific type in RNN
+events. Long Short Term Memory (LSTM)[^fn5] networks - a specific type in RNN
 class- can handle this issue. It is capable of learning long term gaps.
-In 1997, Hochreiter and Schmidhuber introduced LSTM [(pdf version can be
+In 1997, Hochreiter and Schmidhuber[^fn6] introduced LSTM [(pdf version can be
 found here)](http://www.bioinf.jku.at/publications/older/2604.pdf).
 
 > “*LSTM also solves complex, artificial long time lag tasks that have
@@ -225,10 +212,7 @@ they have these four interacting layers in each state. It has three
 multiple pointwise operations. These elements give LSTM the possibility
 to remember, forget and learn information through different states.
 
-<img src="post_files/figure-markdown_github/unnamed-chunk-13-1.png" alt="An unrolled LSTM containing 4 internal layers"  />
-<p class="caption">
-An unrolled LSTM containing 4 internal layers
-</p>
+![An unrolled LSTM containing 4 internal layers]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-13-1.png)
 
 *Results*
 ---------
@@ -284,7 +268,7 @@ single word. Besides, it can mimic the format of the real world poem.
 Sentences and verses are in different lengths!
 
 Just for the sake of curiosity, I imported all Shakespeare’s poems from
-the Gutenberg project by using gutenbergr package. Since the results
+the Gutenberg project[^fn7] by using gutenbergr package[^fn8]. Since the results
 were not suitable to present, I exclude the results and the
 corresponding code.
 
@@ -301,39 +285,18 @@ which control under fitting and over fitting, it can generate more
 sophisticated results that are still far away from a well-written poem.
 
 
-[^fn2]: https://www.poetryfoundation.org/
-
 [^fn1]: https://www.kaggle.com/ultrajack/modern-renaissance-poetry
+
+[^fn2]: https://www.poetryfoundation.org/
 
 [^fn3]: The phoenix and the turtle, Escutcheon Press, Shakespeare William, 1991
 
-[^fn4]: Understanding LSTM Networks -- colah's blog, http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+[^fn4]: wikipedia, Bigram, https://en.wikipedia.org/wiki/Bigram
 
-@article{article1,
-title={LONG SHORT-TERM MEMORY},
-journal={Neural Computation},
-author={Hochreiter, Sepp and Schmidhuber, Jurgen},
-year={1997},
-pages={1738–1780}
-}
+[^fn5]: Understanding LSTM Networks -- colah's blog, http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
-@misc{wikipedia,
-title={Bigram},
-url={https://en.wikipedia.org/wiki/Bigram},
-journal={Wikipedia},
-publisher={Wikimedia Foundation},
-year={2020},
-month={Apr}
-}
+[^fn6]: LONG SHORT-TERM MEMORY, journal of Neural Computation, Hochreiter and Schmidhuber, 1997, p.1738–1780
 
-@misc{gproj,
-title={Project Gutenberg},
-url={https://www.gutenberg.org/},
-journal={Project Gutenberg}
-}
+[^fn7]: Project Gutenberg, https://www.gutenberg.org/
 
-@misc{robinson,
-title={Download and Process Public Domain Works from Project Gutenberg [R package gutenbergr version 0.1.5]},
-url={https://cran.r-project.org/web/packages/gutenbergr/index.html},
-journal={The Comprehensive R Archive Network}, publisher={Comprehensive R Archive Network (CRAN)},
-author={Robinson, David}}
+[^fn8]: robinson, Download and Process Public Domain Works from Project Gutenberg [R package gutenbergr version 0.1.5]
