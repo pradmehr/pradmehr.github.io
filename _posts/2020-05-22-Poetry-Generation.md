@@ -15,7 +15,7 @@ mathjax: "true"
 Introduction
 ============
 
-![alt]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-1-1.png)
+![]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-1-1.png)
 
 In this present post, I am going to investigate poems generation by using Recurrent Neural Network (RNN). Since a poem is a collection of words in a sequence, I decide to deploy Long Short-Term Memory (LSTM) as it can capture this sequence of words. Each cell of LSTM can process data in a sequence way and use its hidden layers as a new input. After this short introduction, I explain the chosen dataset. Then, I do some preprocessing tasks to make the dataset prepared for neural network analysis. By conducting Explanatory Data Analysis (EDA), we will get more insight from the dataset. We will take a look at word frequency, word cloud, and n-gram. In the model section, we discuss LSTM and the results.
 
@@ -67,7 +67,7 @@ EDA
 *Word frequency table*
 ----------------------
 
-![Top 6 most frequent words in the poetry dataset]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-4-1.png)
+![Top 6 most frequent words in the poetry dataset]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-4-1.png)
 
 The first step we can take in Explanatory Data Analysis (EDA) is to
 display the word frequency. It can be useful to find out the
@@ -85,7 +85,7 @@ divide corresponding values by the total number of poems in the dataset
 (506), there would be at least one word `Love` in each poem (on
 average).
 
-![Word Cloud (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-5-1.png)
+![Word Cloud (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-5-1.png)
 
 *Word Cloud*
 ------------
@@ -107,9 +107,9 @@ And not surprisingly, **Love** has been the most frequent word in all
 periods. It seems it is an unsolved problem of humanity! Or at least an
 attractive topic for poets of all time.
 
-![Word Cloud of Renaissance poetry (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-6-1.png)
+![Word Cloud of Renaissance poetry (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-6-1.png)
 
-![Word Cloud of Modern poetry (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-7-1.png)
+![Word Cloud of Modern poetry (for those whose frequency is higher than 10)]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-7-1.png)
 
 *Bigram List*
 -------------
@@ -157,7 +157,7 @@ probable word. In the Markov chain, predicting the next word depends
 only on the previous word. Since we are going to deploy LSTM-RNN, it
 does not need to delve more into bigram network visualization.
 
-![Bigram Network]({{ site.url }}{{ site.baseurl }}_post/figure-markdown_github/unnamed-chunk-9-1.png)/
+![Bigram Network]({{ site.url }}{{ site.baseurl }}_post/image/unnamed-chunk-9-1.png)/
 
 Model
 =====
@@ -170,14 +170,14 @@ at predicting events which are dependent on the previous event.
 Recurrent neural networks (RNN) can address this problem by deploying
 loops in itself. This loop acts like a memory to persist information.
 
-![An unrolled simple RNN]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-10-1.png)
+![An unrolled simple RNN]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-10-1.png)
 
 If we unroll this loop, it turns out that they can be considered as a
 consecutive normal neural networks. RNN is nothing just several serie
 copies of the same network. Each copy can pass information to its
 successor. It can be depicted as following figure:
 
-![Unrolled RNN - a consecutively repeated NN]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-11-1.png)
+![Unrolled RNN - a consecutively repeated NN]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-11-1.png)
 
 *LSTM*
 ------
@@ -212,7 +212,7 @@ they have these four interacting layers in each state. It has three
 multiple pointwise operations. These elements give LSTM the possibility
 to remember, forget and learn information through different states.
 
-![An unrolled LSTM containing 4 internal layers]({{ site.url }}{{ site.baseurl }}/_posts/figure-markdown_github/unnamed-chunk-13-1.png)
+![An unrolled LSTM containing 4 internal layers]({{ site.url }}{{ site.baseurl }}/_posts/image/unnamed-chunk-13-1.png)
 
 *Results*
 ---------
