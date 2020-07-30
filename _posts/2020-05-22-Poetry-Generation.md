@@ -173,6 +173,7 @@ loops in itself. This loop acts like a memory to persist information.
      alt="An unrolled simple RNN"
      width="30%" height="30%"
      style="float: left; margin-right: 5px;" />
+<br />
 
 If we unroll this loop, it turns out that they can be considered as a
 consecutive normal neural networks. RNN is nothing just several serie
@@ -184,6 +185,7 @@ successor. It can be depicted as following figure:
      width="70%" height="70%"
      style="float: left; margin-right: 5px;" />
 
+<br />
 *LSTM*
 ------
 
