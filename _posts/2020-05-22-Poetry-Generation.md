@@ -204,12 +204,6 @@ found here)](http://www.bioinf.jku.at/publications/older/2604.pdf).
 > — Hochreiter and Schmidhuber, 1997
 > </footer>
 
-``` r
-#```{marginfigure}
-#\break
-#\break
-#Figure 6-8 are extracted from the brilliant [Christopher Olah\'s #blog](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
-```
 
 Remembering events and maintaining information for long periods is in
 LSTM’s blood. While RNN contains a chain of simple neural networks, LSTM
@@ -295,6 +289,10 @@ and spaces between words. By changing maxlen, epoch, and batch sizes,
 which control under fitting and over fitting, it can generate more
 sophisticated results that are still far away from a well-written poem.
 
+
+PS: Figure 6-8 are extracted from the brilliant [Christopher Olah\'s #blog](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+---
 
 [^fn1]: https://www.kaggle.com/ultrajack/modern-renaissance-poetry
 
