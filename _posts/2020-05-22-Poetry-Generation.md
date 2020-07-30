@@ -171,7 +171,7 @@ loops in itself. This loop acts like a memory to persist information.
 
 <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-rolled.png"
      alt="An unrolled simple RNN"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 5px;" />
 
 If we unroll this loop, it turns out that they can be considered as a
 consecutive normal neural networks. RNN is nothing just several serie
@@ -180,7 +180,7 @@ successor. It can be depicted as following figure:
 
 <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png"
      alt="Unrolled RNN - a consecutively repeated NN"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 5px;" />
 
 *LSTM*
 ------
