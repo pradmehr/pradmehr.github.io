@@ -156,7 +156,7 @@ probable word. In the Markov chain, predicting the next word depends
 only on the previous word. Since we are going to deploy LSTM-RNN, it
 does not need to delve more into bigram network visualization.
 
-![Bigram Network]({{ site.url }}{{ site.baseurl }}/images/Project/LSTM/unnamed-chunk-9-1.png)/
+![Bigram Network]({{ site.url }}{{ site.baseurl }}/images/Project/LSTM/unnamed-chunk-9-1.png)
 
 Model
 =====
@@ -169,14 +169,18 @@ at predicting events which are dependent on the previous event.
 Recurrent neural networks (RNN) can address this problem by deploying
 loops in itself. This loop acts like a memory to persist information.
 
-![An unrolled simple RNN]({{ site.url }}{{ site.baseurl }}/images/Project/LSTM/unnamed-chunk-10-1.png)
+<img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-rolled.png"
+     alt="An unrolled simple RNN"
+     style="float: left; margin-right: 10px;" />
 
 If we unroll this loop, it turns out that they can be considered as a
 consecutive normal neural networks. RNN is nothing just several serie
 copies of the same network. Each copy can pass information to its
 successor. It can be depicted as following figure:
 
-![Unrolled RNN - a consecutively repeated NN]({{ site.url }}{{ site.baseurl }}/images/Project/LSTM/unnamed-chunk-11-1.png)
+<img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png"
+     alt="Unrolled RNN - a consecutively repeated NN"
+     style="float: left; margin-right: 10px;" />
 
 *LSTM*
 ------
@@ -211,11 +215,11 @@ they have these four interacting layers in each state. It has three
 multiple pointwise operations. These elements give LSTM the possibility
 to remember, forget and learn information through different states.
 
-![An unrolled LSTM containing 4 internal layers]({{ site.url }}{{ site.baseurl }}/images/Project/LSTM/unnamed-chunk-13-1.png)
-
 <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png"
-     alt="test"
+     alt="LSTM"
      style="float: left; margin-right: 10px;" />
+
+---
 
 *Results*
 ---------
