@@ -213,6 +213,10 @@ to remember, forget and learn information through different states.
 
 ![An unrolled LSTM containing 4 internal layers]({{ site.url }}{{ site.baseurl }}/images/Project/LSTM/unnamed-chunk-13-1.png)
 
+<img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png"
+     alt="test"
+     style="float: left; margin-right: 10px;" />
+
 *Results*
 ---------
 
