@@ -156,7 +156,7 @@ probable word. In the Markov chain, predicting the next word depends
 only on the previous word. Since we are going to deploy LSTM-RNN, it
 does not need to delve more into bigram network visualization.
 
-![Bigram Network]({{ site.url }}{{ site.baseurl }}_post/image/unnamed-chunk-9-1.png)/
+![Bigram Network]({{ site.url }}{{ site.baseurl }}/images/Project/LSTM/unnamed-chunk-9-1.png)/
 
 Model
 =====
