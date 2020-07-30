@@ -171,6 +171,7 @@ loops in itself. This loop acts like a memory to persist information.
 
 <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-rolled.png"
      alt="An unrolled simple RNN"
+     width="50%" height="50%"
      style="float: left; margin-right: 5px;" />
 
 If we unroll this loop, it turns out that they can be considered as a
